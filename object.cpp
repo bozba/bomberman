@@ -40,7 +40,7 @@ class Object{
 	Coordinate getCoordiante(){
 		return (*c);
 	}
-	void setCoordinate(Coordiante* c_){
+	void setCoordinate(Coordiante& c_){
 		c=c_;
 	}
 };
@@ -51,7 +51,20 @@ class Player: public Creature{
 	public:
 		Player(Coordinate& c_,std::string n,int pid,int nob=1,int sod=1):Creature(c_,n,pid),number_of_bombs(nob),size_of_detonation(sod){}
 		Player(Coordinate& c_,nt pid,int nob=1,int sod=1):Object(c_),player_id(pid),number_of_bombs(nob),size_of_detonation(sod){}
-
+		int getSOD(){
+			return size_of_detonation;
+		}
+		void setSOD(unsigned int i){
+			if(i<1){
+				size_of_detonation=1;
+			}
+			else if(i>10){
+				size_of_detonation=10;
+			}
+			else{
+				size_of_detonation=i;
+			}
+		}
 };
 
 class Bomb: public Object{
