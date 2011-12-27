@@ -16,6 +16,8 @@ class Commun{
 		
 };
 
+
+//ezt küldjük a guinak, ebből tudja, hogy hol mi történt és kivel (ha a pid nem 0)
 class Data{
 	public:
 	Event e;
@@ -24,5 +26,5 @@ class Data{
 	Data(Event ev,Coordiante c_,int pid=0):e(ev),c(c_),player_id(pid){}
 };
 
-enum Event {MLEFT,MRIGHT,MUP,MDOWN,SLEFT,SRIGHT,SUP,SDOWN,DIE,BOMB,EXPL_CENTER,EXPL_R,EXPL_L,EXPL_UP,EXPL_DOWN,WALL_DES,B_POWUP_APP,SOD_POWUP_APP}
-
+//milyen eventek történhetnek gui szempontból, a stopokból nem biztos, hogy kell külön 4 fajta
+enum Event {MLEFT,MRIGHT,MUP,MDOWN,SLEFT,SRIGHT,SUP,SDOWN,DIE,BOMB,EXPL_CENTER,EXPL_HOR,EXPL_VER,WALL_DES,B_POWUP_APP,SOD_POWUP_APP,PLAYER_DIE,MONSTER_DIE};

@@ -18,7 +18,7 @@ class Map{
     unsigned int width;
 	maptype mt;
     public:
-    enum FieldType {BLANK,PLAYER_ONE,PLAYER_TWO,PLAYER_THREE,PLAYER_FOUR,BOMB,DWALL,NDWALL,PU_PB,PU_PSOD};
+    enum FieldType {BLANK,PLAYER_ONE,PLAYER_TWO,PLAYER_THREE,PLAYER_FOUR,BOMB,DWALL,NDWALL,PU_PB,PU_PSOD,EXPL};
 
     Map(map<Coordinate,FieldType> f,int h,int w): fields(f), height(h), width(w){
     }
@@ -43,7 +43,22 @@ class Map{
 			//lekezelés
 		}
 	}
+	
+	void setfieldtype(FieldType ft,Coordinate c){
+		if(containpont(c)){
+			fields.find(c)->second=ft;
+		}
+	}
 
+	bool walkable(Coordinate& c){
+		f(getfieldtype(c)==FieldType.BLANK || map.getfieldtype(c)==FieldType.PU_PB || map.getfieldtype(c)==PU_PSOD){
+			return true;
+		}
+		return false;
+	}
+	
+
+	void setplayer(Coordiante& c,Player* p);
 };
 
 
@@ -85,6 +100,18 @@ Coordinate* Map::player_coordinate(unsigned int& pid){
 	}
 	else{
 		return null;
+	}
+}
+
+
+//beallitja az adott mezore az adott idvel rendelekzo jatekost
+void Map::setplayer(Coordiante& c,Player* p){
+	switch(*p.getid()){
+		case 1:fields.find(c)->second=FieldType.PLAYER_ONE;break;
+		case 2:fields.find(c)->second=FieldType.PLAYER_TWO;break;
+		case 3:fields.find(c)->second=FieldType.PLAYER_THREE;break;
+		case 4:fields.find(c)->second=FieldType.PLAYER_FOUR;break;
+		default:break;
 	}
 }
 
