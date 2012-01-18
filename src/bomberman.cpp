@@ -2,11 +2,19 @@
 
 Bomberman::Bomberman() : is_running(true){}
 
+Bomberman::~Bomberman()
+	{
+		// MUST NEED diliti operator by Lakilaci
+		delete gc;
+		delete window;
+		delete resources;
+	}
+
 int Bomberman::start(const std::vector<CL_String> &args)
 	{
 		window=new CL_DisplayWindow("Bomberman", 800, 600, false, true);
 		gc=&window->get_gc();
-		CL_ResourceManager resources;
+		resources=NULL;
 		CL_Slot slot_quit = window->sig_window_close().connect(this, &Bomberman::on_quit);
 		
 		// main loop
