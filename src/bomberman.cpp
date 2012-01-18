@@ -12,7 +12,7 @@ Bomberman::~Bomberman()
 
 int Bomberman::start(const std::vector<CL_String> &args)
 	{
-		window=new CL_DisplayWindow("Bomberman", 800, 600, false, true);
+		window=new CL_DisplayWindow("Bomberman", 1024, 768, false, true);
 		gc=&window->get_gc();
 		resources=NULL;
 		CL_Slot slot_quit = window->sig_window_close().connect(this, &Bomberman::on_quit);
