@@ -1,6 +1,8 @@
 #ifndef BOMBERMAN_HPP
 #define BOMBERMAN_HPP
 
+#include "precomp.hpp"
+
 class Bomberman{
 
 private:

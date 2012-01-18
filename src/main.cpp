@@ -1,5 +1,6 @@
 #include "precomp.hpp"
 #include "main.hpp"
+#include "bomberman.hpp"
 
 // Choose the target renderer
 //#define USE_OPENGL_2
@@ -40,8 +41,8 @@ int Program::main(const std::vector<CL_String> &args)
 			CL_SetupGL setup_gl;
 		#endif
 
-           //PrimitivesExample example;
-           //example.run();
+           Bomberman app;
+           app.start(args);
        }
        catch(CL_Exception &exception)
        {
