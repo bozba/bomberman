@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<resources>
+	
+	<sprite name="Bomb">
+		<image file="resources/bomb1.png" />
+		<image file="resources/bomb2.png" />
+		<image file="resources/bomb3.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+		<animation loop="yes" speed="500"></animation>
+	</sprite>
+	
+	<sprite name="WBomberFrontStand" >
+		<image file="resources/wbombstandF.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+	</sprite>
+	
+	<sprite name="WBomberBackStand" >
+		<image file="resources/wbombstandB.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+	</sprite>
+	
+	<sprite name="WBomberLeftStand" >
+		<image file="resources/wbombfaceL.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+	</sprite>
+	
+	<sprite name="WBomberRightStand" >
+		<image file="resources/WbombfaceR.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+	</sprite>
+	
+</resources>
