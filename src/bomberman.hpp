@@ -2,14 +2,14 @@
 #define BOMBERMAN_HPP
 
 #include "precomp.hpp"
+#include "gameobject.hpp"
 
 class Bomberman{
 
 private:
 	bool is_running;
-	CL_GraphicContext *gc;
-	CL_DisplayWindow *window;
-	CL_ResourceManager *resources;
+	CL_DisplayWindow window;
+	CL_ResourceManager resources;
 
 public:
 	Bomberman();

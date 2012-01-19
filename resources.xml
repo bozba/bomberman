@@ -29,9 +29,49 @@
 	</sprite>
 	
 	<sprite name="WBomberRightStand" >
-		<image file="resources/WbombfaceR.png" />
+		<image file="resources/wbombfaceR.png" />
 		<translation origin="center" />
 		<rotation origin="center" />
+	</sprite>
+	
+	<sprite name="WBomberRightMove" >
+		<image file="resources/wbombmovR1.png" />
+		<image file="resources/wbombfaceR.png" />
+		<image file="resources/wbombmovR2.png" />
+		<image file="resrouces/wbombfaceR.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+		<animation loop="yes" speed="500"></animation>
+	</sprite>
+	
+	<sprite name="WBomberLeftMove" >
+		<image file="resources/wbombmovL1.png" />
+		<image file="resources/wbombfaceL.png" />
+		<image file="resources/wbombmovL2.png" />
+		<image file="resrouces/wbombfaceL.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+		<animation loop="yes" speed="500"></animation>
+	</sprite>
+	
+	<sprite name="WBomberUpMove" >
+		<image file="resources/wbombmovUp1.png" />
+		<image file="resources/wbombstandB.png" />
+		<image file="resources/wbombmovUp2.png" />
+		<image file="resrouces/wbombstandB.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+		<animation loop="yes" speed="500"></animation>
+	</sprite>
+	
+	<sprite name="WBomberDownMove" >
+		<image file="resources/wbombmovDown1.png" />
+		<image file="resources/wbombstandF.png" />
+		<image file="resources/wbombmovDown2.png" />
+		<image file="resrouces/wbombstandF.png" />
+		<translation origin="center" />
+		<rotation origin="center" />
+		<animation loop="yes" speed="500"></animation>
 	</sprite>
 	
 </resources>
