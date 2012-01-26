@@ -20,9 +20,9 @@
 #endif
 
 int Program::main(const std::vector<CL_String> &args)
-   {	
-       try
-       {
+	{	
+		try
+		{
 		// Initialize ClanLib base components
 		CL_SetupCore setup_core;
 
@@ -40,24 +40,27 @@ int Program::main(const std::vector<CL_String> &args)
 		#ifdef USE_OPENGL_2
 			CL_SetupGL setup_gl;
 		#endif
+		
+		// Initialize the Clanlib gui component
+		CL_SetupGUI setup_gui;
 
-       Bomberman app;
-       int returnval=app.start(args);
-       return returnval;
-       }
-       catch(CL_Exception &exception)
-       {
-           // Create a console window for text-output if not available
-           CL_ConsoleWindow console("Console", 80, 160);
-           CL_Console::write_line("Error: " + exception.get_message_and_stack_trace());
+		Bomberman app;
+		int returnval=app.start(args);
+		return returnval;
+		}
+		catch(CL_Exception &exception)
+		{
+			// Create a console window for text-output if not available
+			CL_ConsoleWindow console("Console", 80, 160);
+			CL_Console::write_line("Error: " + exception.get_message_and_stack_trace());
 
-           console.display_close_message();
+			console.display_close_message();
 
-           return -1;
-       }
+			return -1;
+		}
 
-       return 0;
-   }
+		return 0;
+	}
 
 // Instantiate CL_ClanApplication, informing it where the Program is located
 CL_ClanApplication app(&Program::main);

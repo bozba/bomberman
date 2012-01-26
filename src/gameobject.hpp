@@ -1,13 +1,16 @@
 #include "precomp.hpp"
 
-class Bomberman;
-
 class GameObject
 {
 public:
-	GameObject(Bomberman *bomberman)	{this->bomberman=bomberman;}
-	virtual void draw(CL_GraphicContext *gc){}
+	GameObject(CL_ResourceManager *resources,CL_GraphicContext *gc) :
+		resources(resources),gc(gc){}
+	virtual void draw(int pos_x,int pos_y,CL_GraphicContext *gc){}
+	void set_pos(float x,float y);
 	
 protected:
-	Bomberman *bomberman;
+	CL_ResourceManager *resources;
+	CL_GraphicContext *gc;
+	float pos_x;
+	float pos_y;
 };
